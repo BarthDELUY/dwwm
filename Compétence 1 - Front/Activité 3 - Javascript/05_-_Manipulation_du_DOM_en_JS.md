@@ -157,3 +157,202 @@ Exemple :
 // Je récupère tous les boutons radio sur la couleur
 let all_color = document.getElementsByName('color');
 ```
+
+
+## 3. Gérer les classes CSS d'un élément 🏫
+
+### 3.1 Récupérer la liste des classes d'un élément 🏫
+
+Il existe deux façons d'accéder à la liste des classes d'un élément :
+
+  * `document.querySelector(...).className` qui renvoie la liste des classes sous forme d'une string (on obtient exactement la valeur qu'il y a dans l'attribut class="..." de l'élément)
+  * `document.querySelector(...).classList` qui renvoie un tableau contenant les classes
+
+Il est beaucoup plus simple de traiter classList que l'attribut className, on va donc se concentrer sur celui-là à partir de maintenant.
+
+### 3.2 Ajouter une classe à un élément 🏫
+
+```js
+// On récupère l'élément
+let elt = document.querySelector('#mon-id');
+// On lui ajoute la classe "discount"
+elt.classList.add("discount");
+```
+
+### 3.3 Supprimer une classe d'un élément 🏫
+
+```js
+// On récupère l'élément
+let elt = document.querySelector('#mon-id');
+// On lui retire la classe "discount"
+elt.classList.remove("discount");
+```
+
+### 3.4 Toggle une classe d'un élément 🏫
+
+```js
+// On récupère l'élément
+let elt = document.querySelector('#mon-id');
+// On lui bascule la classe "discount"
+elt.classList.toggle("discount");
+```
+
+## 4. Gérer les attributs d'un élément 🏫
+
+### 4.1 Récupérer la valeur d'un attribut d'un élément 🏫
+
+```js
+// On récupère l'élément (ici, un champ de formulaire de type "number")
+let elt = document.querySelector('input[type=number]#age');
+// On récupère la valeur de son attribut "min"
+let min_value = elt.getAttribute('min');
+```
+
+### 4.2 Ajouter/modifier la valeur d'un attribut d'un élément 🏫
+
+```js
+// On récupère l'élément (ici, un champ de formulaire de type "number")
+let elt = document.querySelector('input[type=number]#age');
+// On modifie de son attribut "min"
+elt.setAttribute('min', 4);
+```
+
+### 4.3 Supprimer un attribut d'un élément 🏫
+
+```js
+// On récupère l'élément (ici, un champ de formulaire de type "number")
+let elt = document.querySelector('input[type=number]#age');
+// On modifie de son attribut "min"
+elt.removeAttribute('min', 4);
+```
+
+## 5. Accéder à la valeur d'un champ de formulaire 🏫
+
+```js
+// On récupère l'élément (ici, un champ de formulaire de type "number")
+let elt = document.querySelector('input[type=number]#age');
+// On modifie de son attribut "min"
+let ma_valeur = elt.value;
+```
+
+## 6. Modifier le contenu d'un élément 🏫
+
+En Javascript, le contenu HTML d'un élément est disponible dans sa propriété 'innerHTML'.
+Il suffit de la remplacer pour modifier son contenu : 
+
+```html
+<p id="mon_paragraphe">
+    Bonjour, vous devez choisir un nombre entre <span id="valeur_min">0</span>
+    et <span id="valeur_min">0</span>.
+</p>
+<p id="p2"></p>
+```
+
+```js
+// On récupère l'élément
+let elt = document.querySelector('#valeur_min');
+// On peut récupérer son contenu HTML dans une variable si nécessaire
+let old_html = elt.innerHTML;
+// On remplace son contenu
+elt.innerHTML = "5";
+
+// On récupère le deuxième paragraphe : 
+let p2 = document.querySelector('p2');
+// On le remplit avec plusieurs éléments HTML
+p2.innerHTML = '<h1>Titre</h1><span style="color: red">ATTENTION</span> La boîte va bientôt fermer !';
+```
+
+Chaque modification de l'innerHTML d'un élément entraine une relecture et une reconstruction du DOM : le code HTML sera interprété.
+
+## 7. Créer un nouvel élément 🏫
+
+```js
+// On crée l'élément
+let elt = document.createElement('p');
+elt.innerHTML = '<h1>Titre</h1><span style="color: red">ATTENTION</span> La boîte va bientôt fermer !';
+elt.classList.add("discount");
+```
+
+**⚠ ATTENTION ⚠**  L'élément que l'on vient de créer est pour l'instant isolé de la page ! Si on écrase la variable "elt", on perd cet élément.
+
+## 8. Attacher un élément à la page
+
+### 8.1 Insérer l'élément à la fin d'un élément parent (un container par exemple) 🏫
+```html
+<section id="mes-articles">
+    <p id="mon_paragraphe">
+        Bonjour, vous devez choisir un nombre entre <span id="valeur_min">0</span>
+        et <span id="valeur_min">0</span>.
+    </p>
+    <p id="p2"></p>
+</section>
+```
+```js
+// On crée l'élément
+let new_p = document.createElement('p');
+new_p.setAttribute('id', 'mon-nouveau-paragraphe');
+new_p.innerHTML = '<h1>Titre</h1><span style="color: red">ATTENTION</span> La boîte va bientôt fermer !';
+new_p.classList.add("discount");
+
+// On récupère son élément parent
+let elt_parent = document.querySelector("#mes-articles");
+// On le rattache à son élément parent, à la fin de l'élément
+elt_parent.appendChild(newp);
+
+```
+
+### 8.2 Insérer l'élément au début d'un élément parent (un container par exemple) 🏫
+```html
+<section id="mes-articles">
+    <p id="mon_paragraphe">
+        Bonjour, vous devez choisir un nombre entre <span id="valeur_min">0</span>
+        et <span id="valeur_min">0</span>.
+    </p>
+    <p id="p2"></p>
+</section>
+```
+```js
+// On crée l'élément
+let new_p = document.createElement('p');
+new_p.setAttribute('id', 'mon-nouveau-paragraphe');
+new_p.innerHTML = '<h1>Titre</h1><span style="color: red">ATTENTION</span> La boîte va bientôt fermer !';
+new_p.classList.add("discount");
+
+// On récupère son élément parent
+let elt_parent = document.querySelector("#mes-articles");
+// On le rattache à son élément parent, à la fin de l'élément
+elt_parent.prependChild(newp);
+
+```
+
+### 8.3 Insertion positionnée d'un nouvel élément ✨
+
+Pour insérer un élément à un emplacement spécifiquer, il faudra utiliser soit `insertBefore()` [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore), `insertAfter()` [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertAfter), ou `insertAdjacentElement()` [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement).
+
+## 9. Supprimer un élément du DOM 🏫
+
+Pour supprimer un élément du DOM, il faut : 
+  * accéder à son élément parent
+  * récupérer l'élément à supprimer
+  * le supprimer de la liste des éléments enfants du parent
+
+Exemple : 
+```html
+<section id="mes-articles">
+    <p id="mon_paragraphe">
+        Bonjour, vous devez choisir un nombre entre <span id="valeur_min">0</span>
+        et <span id="valeur_min">0</span>.
+    </p>
+    <p id="p2" class="to-delete"></p>
+</section>
+```
+```js
+
+// On récupère son élément parent
+let elt_parent = document.querySelector("#mes-articles");
+// On va chercher l'élément à supprimer
+let elt_todelete = document.querySelector(".to-delete");
+// La fonction removeChild détache l'élément du DOM et le renvoie, pour ne pas le perdre au cas où
+let deleted_elt = elt_parent.removeChild(elt_todelete);
+
+```
