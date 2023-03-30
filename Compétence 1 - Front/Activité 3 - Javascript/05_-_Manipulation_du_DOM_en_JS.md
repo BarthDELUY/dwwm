@@ -231,8 +231,10 @@ elt.removeAttribute('min', 4);
 ```js
 // On récupère l'élément (ici, un champ de formulaire de type "number")
 let elt = document.querySelector('input[type=number]#age');
-// On modifie de son attribut "min"
+// On récupère sa valeur
 let ma_valeur = elt.value;
+// On change sa valeur
+elt.value = 18;
 ```
 
 ## 6. Modifier le contenu d'un élément 🏫
@@ -297,7 +299,7 @@ new_p.classList.add("discount");
 // On récupère son élément parent
 let elt_parent = document.querySelector("#mes-articles");
 // On le rattache à son élément parent, à la fin de l'élément
-elt_parent.appendChild(newp);
+elt_parent.appendChild(new_p);
 
 ```
 
@@ -321,7 +323,7 @@ new_p.classList.add("discount");
 // On récupère son élément parent
 let elt_parent = document.querySelector("#mes-articles");
 // On le rattache à son élément parent, à la fin de l'élément
-elt_parent.prependChild(newp);
+elt_parent.prependChild(new_p);
 
 ```
 
