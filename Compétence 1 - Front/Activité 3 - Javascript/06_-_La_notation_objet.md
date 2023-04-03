@@ -117,7 +117,7 @@ Les classes vont nous permettre de définir la structure de nos futurs objets. L
 
 Les classes vont également nous permettre d'encapsuler (de contenir) des fonctions utiles seulement à cette classe, ou des fonctionnalités qu'elle veut proposer au monde extérieur.
 
-Tout comme les fonctions, les classes doivent être déclarées.
+Tout comme les fonctions, les classes doivent être déclarées ; elles doivent également être déclarées *avant* d'être utilisées.
 
 #### Déclaration d'une classe 🏫
 
@@ -154,12 +154,13 @@ class Person {
 }
 ```
 
-#### Ecapsuler une fonction dans une classe 🏫
+#### Encapsuler une fonction dans une classe 🏫
 
-Il n'est pas possible d'afficher directement un objet : si on essaie, on obtiendra "[Object] barth".  
+Il n'est pas possible d'afficher directement un objet : si on essaie, on obtiendra "[Object] object".  
 Il est intéressant que notre objet propose une fonction permettant de l'afficher, comme nous le souhaitons.
 
-En POO, ce genre de fonctions est généralement appelée *toString()*.
+En POO, ce genre de fonctions est généralement appelée *toString()*.  
+Du point de vue vocabulaire, une fonction encapsulée (contenue) dans une classe est appelée une *méthode* de la classe.
 
 ```js
 class Person {
@@ -179,3 +180,21 @@ barth.name = "DELUY";
 barth.firstname = "Barth";
 console.log(barth.toString());
 ```
+
+#### Le constructeur 🏫
+
+Le constructeur d'une classe est une méthode spéciale nommée "constructor()", appelée automatiquement dès qu'on utilise le mot-clé **new**.  
+On l'utilise généralement pour lui passer les valeurs à stocker dans les attributs de la classe, au lieu de les configurer un par un :
+
+```js
+class Person {
+    name;
+    firstname;
+    toString() {
+        return this.firstname + " " + this.name;
+    }
+    constructor( name, firstname) {
+        this.name = name;
+        this.firstname = firstname;
+    }
+}
