@@ -60,7 +60,7 @@ Il est donc possible d'accéder au titre du livre par **mybook.title**, et au no
 
 ##### Résumé de la syntaxe JSON 🏫
 
-Un objet est déclaré entre accolades; ses sous-variables, que l'on va appeler atributs ou propriétés, sont composés d'un identifiant, suivi d'un deux-points, suivi de leur valeur.  
+Un objet est déclaré entre accolades; ses sous-variables, que l'on va appeler attributs ou propriétés, sont composés d'un identifiant, suivi d'un deux-points, suivi de leur valeur.  
 La valeur d'un attribut peut être de n'importe quel type : nombre, string, booléen, tableau, et même un autre objet !
 
 Exemple complexe : 
@@ -88,11 +88,11 @@ let restaurant = {
     menus: [
         {
             name: "Menu du jour",
-            price: 14,99
+            price: 14.99
         },
         {
             name: "Menu du Chef",
-            price: 18,99
+            price: 18.99
         }
     ]
     
