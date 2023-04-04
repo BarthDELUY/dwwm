@@ -95,4 +95,4 @@ try {
     connexion.close();
 }
 ```
-Si la fonction is_age_valide lance une erreur, alors le bloc « catch » sera exécuté, sinon il sera ignoré, mais dans tous les cas, le finally sera exécuté.
+Si la fonction is_age_valide lance une erreur, alors le bloc « catch » sera exécuté, sinon il sera ignoré, mais dans tous les cas, le finally sera exécuté, donc la connexion sera fermée proprement au lieu de générer une fuite mémoire.
