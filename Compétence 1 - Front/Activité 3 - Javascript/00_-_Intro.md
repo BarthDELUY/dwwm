@@ -27,3 +27,5 @@ Il est nécessaire mais pas suffisant pour valider cette compétence (il est né
   * 03 - Ajouter du JS sur une page web
   * 04 - Implémentation en JS des concepts vus en Algorithmie
   * 05 - [Manipulation du DOM en JS](05_-_Manipulation_du_DOM_en_JS.md)
+  * 06 - [La notation objet en JS](06_-_La_notation_objet.md)
+  * 07 - [La gestion des erreurs en JS](07_-_La_gestion_des_erreurs.md)

@@ -11,7 +11,7 @@ Javascript nous permet d'interagir avec lui, pour :
 
 On peut utiliser ici l'acronyme CRUD (pour **C**reate, **R**ead, **U**pdate, **D**elete).
 
-## Sommaire ##
+## Sommaire
 
   1. [Accéder à un seul élément du DOM](#access-single-element)
   2. [Accéder à un ensemble d'éléments du DOM](#access-multiple-elements)
