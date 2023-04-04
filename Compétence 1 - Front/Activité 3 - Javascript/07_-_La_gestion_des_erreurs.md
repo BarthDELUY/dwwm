@@ -25,12 +25,16 @@ if ( age < 18 ) {
 }
 ```
 
+Il existe de nombreuses erreurs pré-construites en JS : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#error_types
+
 Le "throw" est équivalent à un return, dans le sens où il arrête l'exécution du code.  
 Différence avec le return : dans le cas d'un throw, on sort du fonctionnement nominal du programme, pour rentrer dans le canal d'erreurs.
 
 Si on ne réagit pas à l'erreur qui est jetée, alors le programme va simplement s'arrêter et afficher l'erreur dans la console, en rouge.
 
 ## 2. Réagir à une erreur 🏫
+
+#### Intercepter les erreurs
 
 On utilise le mécanisme des erreurs pour sortir du fonctionnement classique du programme, afin de réagir à un cas exceptionnel.
 
@@ -76,3 +80,19 @@ try {
 }
 
 ```
+
+#### Exécuter un traitement qu'il y a eut une erreur ou non
+
+Dans certains cas, on souhaite pouvoir « clore » le traitement proprement (notamment pour fermer une connexion par exemple). Pour ça, on peut utiliser le bloc « finally » qui sera exécuté quoiqu’il arrive :
+```js
+try {
+    let connexion = ouvrir_connexion(url);
+    let ok = is_age_valid(-5) ;
+} catch(err) {
+    console.error(err) ;
+} finally {
+    console.log("fin du traitement, on doit fermer la connexion") ;
+    connexion.close();
+}
+```
+Si la fonction is_age_valide lance une erreur, alors le bloc « catch » sera exécuté, sinon il sera ignoré, mais dans tous les cas, le finally sera exécuté.

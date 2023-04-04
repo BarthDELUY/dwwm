@@ -38,7 +38,7 @@ Le mécanisme XHR reposait sur des callbacks : à chaque changement d'état de l
 
 ## 2. La fetch API
 
-Le W3C a donc proposé en 2015 un mécanisme uniforme, la fetch API, toujours en évolution aujourd'hui (la dernière release date du 23 mars 2023).
+Le W3C a donc proposé en 2015 un mécanisme uniforme, la [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), toujours en évolution aujourd'hui (la dernière release date du 23 mars 2023).
 
 Ce mécanisme ne se base plus sur les callbacks, mais sur le mécanisme de la programmation asynchrone et des Promesses (dont la manipulation dépasse le cadre de la formation DWWM).
 
