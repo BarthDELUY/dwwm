@@ -29,7 +29,8 @@ Il est nécessaire mais pas suffisant pour valider cette compétence (il est né
   * 05 - [Manipulation du DOM en JS](05_-_Manipulation_du_DOM_en_JS.md)
   * 06 - [La notation objet en JS](06_-_La_notation_objet.md)
   * 07 - [La gestion des erreurs en JS](07_-_La_gestion_des_erreurs.md)
-  * 08 - [Récupérer des données côté serveur](08_-_Récupérer_des_données_côté_serveur.md)
+  * 08 - [La gestion des erreurs en JS](08_-_Conserver_des_valeurs_dans_le_navigateur.md)
+  * 09 - [Récupérer des données côté serveur](09_-_Récupérer_des_données_côté_serveur.md)
 
 
 
