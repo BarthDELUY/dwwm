@@ -32,4 +32,5 @@ Il est nécessaire mais pas suffisant pour valider cette compétence (il est né
   * 08 - [Conserver des valeurs dans le navigateur](08_-_Conserver_des_valeurs_dans_le_navigateur.md)
   * 09 - [Récupérer des données côté serveur](09_-_Récupérer_des_données_côté_serveur.md)
   * 10 - [Les modules en Javascript](10_-_Les_modules_en_JS.md)
+  * 11 - [La gestion des médias en JS](11_-_Gestion_des_media_en_JS.md)
 
