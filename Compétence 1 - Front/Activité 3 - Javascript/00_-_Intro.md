@@ -31,7 +31,5 @@ Il est nécessaire mais pas suffisant pour valider cette compétence (il est né
   * 07 - [La gestion des erreurs en JS](07_-_La_gestion_des_erreurs.md)
   * 08 - [Conserver des valeurs dans le navigateur](08_-_Conserver_des_valeurs_dans_le_navigateur.md)
   * 09 - [Récupérer des données côté serveur](09_-_Récupérer_des_données_côté_serveur.md)
+  * 10 - [Les modules en Javascript](10_-_Les_modules_en_JS.md)
 
-
-
-  
