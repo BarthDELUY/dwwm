@@ -16,6 +16,7 @@ Pour cela, il est nécessaire que Javascript propose un mécanisme permettant d'
 
   1. Ajax et XHR
   2. La fetch API
+  3. Concept : comment traiter des données récupérées côté serveur ?
 
 ## 1. Ajax et XHR
 
@@ -76,3 +77,19 @@ window.addEventListener('load', (e) => {
 </body>
 </html>
 ```
+
+## 3. Concept : comment traiter des données récupérées côté serveur ?
+
+Dans la "vie réelle" de votre application (c'est-à-dire la phase d'*exploitation* de l'application), les échanges entre client et serveur vont être constants : soumission d'un formulaire, changement de page dans un catalogue, tri de données (affichage par prix croissant, par nom, etc), les cas d'utilisation ne manquent pas.
+
+Lorsque le front va récupérer des données côté serveur (requête GET), il va recevoir une réponse au format JSON, contenant les données demandées.
+
+Il convient alors de procéder de façon logique pour les traiter.
+
+Tout d'abord, il faut se demander : quel est le type d'information que je récupère depuis le back ?
+
+  * est-ce un tableau (le json commence par un **[**) ? => il va falloir le parcourir pour récupérer les valeurs et les traiter une par une
+  * est-ce un objet (le json commence par **{**) ? => il est possible d'accéder directement à ses propriétés, parfait !
+  * est-ce une donnée primitive (number, string, boolean, etc) ? => il est possible de les traiter directement.
+
+Dans tous les cas, le code de traitement doit se trouver soit dans une fonction (*et c'est le meilleur endroit*), soit dans la partie "// Code appelé si la réponse est OK" du paragraphe précédent.
