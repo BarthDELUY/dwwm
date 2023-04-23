@@ -6,8 +6,6 @@
   2. Un peu de vocabulaire 🏫
   3. Gestion centralisée ✨
   4. Gestion décentralisée 🏫
-  5. Les branches 🏫
-  6. Les tags ✨
 
 
 ## 1. Pourquoi la gestion de version ? 🏫
